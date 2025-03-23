@@ -1,0 +1,12 @@
+{
+    "modid": "musicmod",
+    "name": "Music Mod",
+    "description": "This mod adds custom loading and menu music.",
+    "version": "1.0.0",
+    "credits": "Created by DerKaiser2023",
+    "authorList": ["DerKaiser2023"],
+    "url": "https://github.com/DerKaiser2023/musicmod",
+    "logoFile": "assets/musicmod/logo.png",
+    "screenshots": [],
+    "dependencies": []
+}
