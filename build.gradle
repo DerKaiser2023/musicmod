@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+}
+
+group 'com.musicmod'
+version '1.0.0'
+archiveBaseName = 'MusicMod'
+
+sourceCompatibility = targetCompatibility = '1.7.10'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://files.minecraftforge.net/maven'}
+}
+
+dependencies {
+    compile 'net.minecraftforge:forge:1.7.10-10.13.4.1614-1.7.10'
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
