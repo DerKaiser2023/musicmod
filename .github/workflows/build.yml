@@ -13,20 +13,7 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
-    - name: Download Forge MDK
-      run: wget https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/forge-1.7.10-10.13.4.1614-1.7.10-mdk.zip
-
-    - name: Extract Forge MDK
-      run: unzip forge-1.7.10-10.13.4.1614-1.7.10-mdk.zip
-
-    - name: Move Project Files
-      run: |
-        mv src forge-1.7.10-10.13.4.1614-1.7.10-mdk/
-        mv build.gradle forge-1.7.10-10.13.4.1614-1.7.10-mdk/
-        mv settings.gradle forge-1.7.10-10.13.4.1614-1.7.10-mdk/
-
-    - name: Navigate to Forge MDK Directory
-      run: cd forge-1.7.10-10.13.4.1614-1.7.10-mdk
+    # ... (Download and Extract Forge MDK steps)
 
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
@@ -37,8 +24,9 @@ jobs:
     - name: Compile the Mod
       run: ./gradlew build
 
+    # Try using @latest or a specific version
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@latest # Or actions/upload-artifact@v3.1.2
       with:
         name: MusicMod-1.0.0.jar
         path: forge-1.7.10-10.13.4.1614-1.7.10-mdk/build/libs/MusicMod-1.0.0.jar
