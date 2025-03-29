@@ -26,7 +26,7 @@ jobs:
 
     # Try using @latest or a specific version
     - name: Upload Artifact
-      uses: actions/upload-artifact@latest # Or actions/upload-artifact@v3.1.2
+      uses: actions/upload-artifact@v4 # this shit better fucking work
       with:
         name: MusicMod-1.0.0.jar
         path: forge-1.7.10-10.13.4.1614-1.7.10-mdk/build/libs/MusicMod-1.0.0.jar
