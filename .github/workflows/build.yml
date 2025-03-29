@@ -1,0 +1,44 @@
+name: Music Mod
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Download Forge MDK
+      run: wget https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/forge-1.7.10-10.13.4.1614-1.7.10-mdk.zip
+
+    - name: Extract Forge MDK
+      run: unzip forge-1.7.10-10.13.4.1614-1.7.10-mdk.zip
+
+    - name: Move Project Files
+      run: |
+        mv src forge-1.7.10-10.13.4.1614-1.7.10-mdk/
+        mv build.gradle forge-1.7.10-10.13.4.1614-1.7.10-mdk/
+        mv settings.gradle forge-1.7.10-10.13.4.1614-1.7.10-mdk/
+
+    - name: Navigate to Forge MDK Directory
+      run: cd forge-1.7.10-10.13.4.1614-1.7.10-mdk
+
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v2
+
+    - name: Run Gradle Setup Tasks
+      run: ./gradlew setupDecompWorkspace --refresh-dependencies
+
+    - name: Compile the Mod
+      run: ./gradlew build
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: MusicMod-1.0.0.jar
+        path: forge-1.7.10-10.13.4.1614-1.7.10-mdk/build/libs/MusicMod-1.0.0.jar
