@@ -1,4 +1,4 @@
-package com.mymusicmod;
+package com.musicmod;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.ISound;
