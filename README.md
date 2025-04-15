@@ -11,6 +11,6 @@ World Loading Music: A separate track plays when joining a world or server.
 
 LAN Join Music: Plays a unique sound when connecting to a LAN world.
 
-Uses Resource Packs: All audio files are sourced from an external resource pack to allow easy customization.
+Uses Resource Packs: All audio files are sourced from an external resource pack to allow easy customization. (literally looks in the folder for menu and music folders.
 
 note: i havent tested this garbage yet so i have no fucking clue if my garbage java programming actually worked.
