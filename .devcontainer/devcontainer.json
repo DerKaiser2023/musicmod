@@ -1,0 +1,9 @@
+{
+    "name": "Forge 1.7.10 Dev",
+    "features": {
+      "ghcr.io/devcontainers/features/java:1": {
+        "version": "8"
+      }
+    },
+    "postCreateCommand": "./gradlew setupDecompWorkspace --refresh-dependencies"
+  }  
