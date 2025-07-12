@@ -1,9 +1,9 @@
 {
-    "name": "Forge 1.7.10 Dev",
-    "features": {
-      "ghcr.io/devcontainers/features/java:1": {
-        "version": "8"
-      }
-    },
-    "postCreateCommand": "./gradlew setupDecompWorkspace --refresh-dependencies"
-  }  
+  "name": "Forge 1.7.10 Dev",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "8"
+    }
+  },
+  "postCreateCommand": "curl -s https://services.gradle.org/distributions/gradle-4.9-bin.zip -o gradle-4.9-bin.zip && unzip gradle-4.9-bin.zip -d /opt && rm gradle-4.9-bin.zip && echo 'export PATH=/opt/gradle-4.9/bin:$PATH' >> ~/.bashrc && ./gradlew setupDecompWorkspace --refresh-dependencies"
+}

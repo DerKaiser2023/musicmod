@@ -1,7 +1,7 @@
 buildscript {
     repositories {
-        jcenter()
-        maven { url = "https://files.minecraftforge.net/maven" }
+        maven { url = "https://maven.minecraftforge.net" }
+        maven { url = "https://plugins.gradle.org/m2/" }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
@@ -10,22 +10,11 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.0.0"
+version = "1.0"
 group = "com.musicmod"
 archivesBaseName = "MusicMod"
-
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
 
 minecraft {
     version = "1.7.10-10.13.4.1614-1.7.10"
     runDir = "run"
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    // Additional deps go here if needed
 }
